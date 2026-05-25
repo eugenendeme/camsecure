@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Member Intake Form - CAMSECURE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#4b1c00",
+                        "on-primary-fixed-variant": "#264191",
+                        "secondary-container": "#2170e4",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-container": "#fefcff",
+                        "on-primary-fixed": "#00164e",
+                        "primary-container": "#1e3a8a",
+                        "on-tertiary-container": "#f39461",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c5c5d3",
+                        "on-tertiary-fixed": "#341100",
+                        "surface-container-low": "#f2f4f6",
+                        "on-background": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#773205",
+                        "secondary": "#0058be",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eceef0",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "on-surface-variant": "#444651",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "inverse-primary": "#b6c4ff",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "surface-container-high": "#e6e8ea",
+                        "primary-fixed": "#dce1ff",
+                        "outline": "#757682",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#eff1f3",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-secondary-fixed": "#001a42",
+                        "tertiary-container": "#6e2c00",
+                        "surface-bright": "#f7f9fb",
+                        "on-surface": "#191c1e",
+                        "primary": "#00236f",
+                        "surface-tint": "#4059aa",
+                        "on-secondary-fixed-variant": "#004395",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "title-md": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "data-mono": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "title-md": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-lg min-h-screen flex flex-col pt-16 md:flex-row md:pt-0">
+<!-- Sidebar Navigation -->
+<nav class="md:w-64 md:flex-shrink-0 md:fixed md:h-screen md:overflow-y-auto bg-surface-container-lowest border-r border-outline-variant/20 flex flex-col pt-4 pb-8 z-40 transition-transform transform -translate-x-full md:translate-x-0 absolute md:relative w-full h-full md:h-auto shadow-lg md:shadow-none">
+<div class="px-6 mb-8 flex justify-between items-center">
+<div class="text-headline-lg-mobile font-display-lg font-bold text-primary dark:text-primary-fixed">CAMSECURE</div>
+<button class="md:hidden text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<div class="flex-grow flex flex-col gap-2 px-4">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors font-body-lg group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors font-body-lg group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">location_on</span>
+                Live GPS
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors font-body-lg group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">security</span>
+                Safe Zones
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container/20 text-primary font-body-lg group font-bold" href="#">
+<span class="material-symbols-outlined text-primary">diversity_1</span>
+                Family Directory
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors font-body-lg group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">history</span>
+                Activity &amp; History
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors font-body-lg group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">handshake</span>
+                Partner Network
+            </a>
+</div>
+<div class="px-4 mt-auto pt-6 border-t border-outline-variant/20">
+<button class="w-full bg-error-container text-on-error-container hover:bg-error hover:text-on-error transition-colors px-4 py-3 rounded-lg font-title-md flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined">campaign</span>
+                Emergency Broadcasts
+            </button>
+</div>
+</nav>
+<!-- Mobile TopBar -->
+<div class="md:hidden fixed top-0 w-full z-30 bg-surface/90 backdrop-blur-md border-b border-outline-variant/20 flex justify-between items-center h-16 px-4">
+<button class="text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<div class="text-title-md font-display-lg font-bold text-primary">CAMSECURE</div>
+<div class="w-8"></div>
+</div>
+<div class="flex-grow flex flex-col md:ml-64 relative min-h-screen">
+<main class="flex-grow max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-12">
+<header class="mb-12">
+<div class="flex items-center gap-2 text-primary mb-2">
+<a class="flex items-center hover:underline" href="#">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+<span class="font-body-sm ml-1">Back to Directory</span>
+</a>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary mb-2">Member Intake Profile</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">Create a comprehensive profile to assist responders and AI identification systems during search and rescue operations.</p>
+</header>
+<form class="space-y-12 pb-24">
+<!-- Visual & Biometric Data -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/20 overflow-hidden">
+<div class="bg-primary/5 px-8 py-4 border-b border-outline-variant/20">
+<h2 class="font-title-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">face_retouching_natural</span>
+                            Biometric &amp; Visual Data
+                        </h2>
+</div>
+<div class="p-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="space-y-4">
+<label class="block font-title-md text-on-surface">Member Identification Photo</label>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-12 flex flex-col items-center justify-center text-center bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-5xl mb-4">add_a_photo</span>
+<p class="font-body-lg text-on-surface-variant">Click or drag to upload a high-resolution portrait</p>
+<p class="text-label-caps text-outline mt-2 italic">Essential for AI facial matching during active searches</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="block font-title-md text-on-surface" for="device_id">Existing Device ID</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">watch</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none font-data-mono" id="device_id" placeholder="e.g. CAM-772-XT" type="text"/>
+</div>
+<p class="text-body-sm text-on-surface-variant">Link a CAMSECURE wristband or wearable tracker ID here.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Personal Information -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/20 overflow-hidden">
+<div class="bg-primary/5 px-8 py-4 border-b border-outline-variant/20">
+<h2 class="font-title-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">person</span>
+                            Personal Information
+                        </h2>
+</div>
+<div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+<div class="md:col-span-2 space-y-2">
+<label class="block font-title-md text-on-surface" for="full_name">Full Name</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none" id="full_name" placeholder="Enter member's legal name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-title-md text-on-surface" for="dob">Date of Birth</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none" id="dob" type="date"/>
+</div>
+<div class="space-y-2">
+<label class="block font-title-md text-on-surface" for="gender">Gender</label>
+<select class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-surface-container-lowest" id="gender">
+<option value="">Select Gender</option>
+<option value="male">Male</option>
+<option value="female">Female</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="block font-title-md text-on-surface" for="relationship">Relationship to Primary Account</label>
+<select class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-surface-container-lowest" id="relationship">
+<option value="">Select Relationship</option>
+<option value="spouse">Spouse</option>
+<option value="child">Child</option>
+<option value="parent">Parent</option>
+<option value="other">Other Relative</option>
+<option value="ward">Legal Ward</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Physical Description -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/20 overflow-hidden">
+<div class="bg-primary/5 px-8 py-4 border-b border-outline-variant/20">
+<h2 class="font-title-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">height</span>
+                            Physical Description
+                        </h2>
+</div>
+<div class="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="space-y-2">
+<label class="block font-title-md text-on-surface" for="height">Height (cm)</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none" id="height" placeholder="175" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="block font-title-md text-on-surface" for="weight">Weight (kg)</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none" id="weight" placeholder="70" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="block font-title-md text-on-surface" for="eye_color">Eye Color</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none" id="eye_color" placeholder="e.g. Brown" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-title-md text-on-surface" for="hair_type">Hair Type</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none" id="hair_type" placeholder="e.g. Curly/Black" type="text"/>
+</div>
+<div class="md:col-span-4 space-y-2">
+<label class="block font-title-md text-on-surface" for="marks">Distinguishing Marks</label>
+<textarea class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none" id="marks" placeholder="Describe scars, birthmarks, tattoos, or notable physical traits..." rows="2"></textarea>
+</div>
+</div>
+</section>
+<!-- Medical & Special Needs -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/20 overflow-hidden">
+<div class="bg-primary/5 px-8 py-4 border-b border-outline-variant/20">
+<h2 class="font-title-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">medical_services</span>
+                            Medical &amp; Special Needs
+                        </h2>
+</div>
+<div class="p-8 space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-2">
+<label class="block font-title-md text-on-surface" for="blood_type">Blood Type</label>
+<select class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-surface-container-lowest" id="blood_type">
+<option value="">Unknown</option>
+<option value="A+">A+</option>
+<option value="A-">A-</option>
+<option value="B+">B+</option>
+<option value="B-">B-</option>
+<option value="O+">O+</option>
+<option value="O-">O-</option>
+<option value="AB+">AB+</option>
+<option value="AB-">AB-</option>
+</select>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="block font-title-md text-on-surface" for="allergies">Allergies</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none" id="allergies" placeholder="List any known allergies" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-title-md text-on-surface" for="medications">Current Medications</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none" id="medications" placeholder="List medications and dosages" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-title-md text-on-surface" for="considerations">Special Considerations</label>
+<textarea class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none" id="considerations" placeholder="e.g. Non-verbal, Autism Spectrum, Dementia/Memory issues, hearing impaired..." rows="3"></textarea>
+<p class="text-body-sm text-on-surface-variant italic">This information is critical for responders to use the appropriate approach.</p>
+</div>
+</div>
+</section>
+<!-- Contact Priority -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/20 overflow-hidden">
+<div class="bg-primary/5 px-8 py-4 border-b border-outline-variant/20">
+<h2 class="font-title-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">priority_high</span>
+                            Emergency Contact Priority
+                        </h2>
+</div>
+<div class="p-8 space-y-4">
+<p class="text-body-lg text-on-surface-variant mb-4">Define who should be notified first if this specific member triggers an alert.</p>
+<div class="space-y-3">
+<div class="flex items-center gap-4 p-4 border border-outline-variant rounded-lg bg-surface-container-low">
+<span class="w-8 h-8 flex items-center justify-center bg-primary text-on-primary rounded-full font-bold">1</span>
+<div class="flex-grow">
+<div class="font-title-md">Primary Account Holder (You)</div>
+<div class="text-body-sm text-on-surface-variant">+237 6XX XXX XXX</div>
+</div>
+<span class="material-symbols-outlined text-outline">drag_indicator</span>
+</div>
+<div class="flex items-center gap-4 p-4 border border-outline-variant rounded-lg">
+<span class="w-8 h-8 flex items-center justify-center border border-outline-variant rounded-full font-bold">2</span>
+<div class="flex-grow">
+<select class="w-full bg-transparent border-none focus:ring-0 p-0 font-title-md">
+<option>Select another family contact...</option>
+<option>Jane Doe (Secondary)</option>
+<option>Samuel Admin</option>
+</select>
+</div>
+<span class="material-symbols-outlined text-outline">drag_indicator</span>
+</div>
+<button class="text-secondary font-title-md flex items-center gap-2 hover:underline p-2" type="button">
+<span class="material-symbols-outlined">add</span>
+                                Add Emergency Contact
+                            </button>
+</div>
+</div>
+</section>
+<!-- Form Actions -->
+<div class="flex flex-col md:flex-row items-center justify-end gap-4 pt-6">
+<button class="w-full md:w-auto px-8 py-3 rounded-lg border border-outline text-on-surface hover:bg-surface-container-low transition-colors font-title-md" type="button">
+                        Cancel Changes
+                    </button>
+<button class="w-full md:w-auto px-12 py-3 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-colors font-title-md flex items-center justify-center gap-2 shadow-lg" type="submit">
+                        Save Member Profile
+                        <span class="material-symbols-outlined">save</span>
+</button>
+</div>
+</form>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant w-full py-12">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-2">
+<div class="text-title-md font-title-md font-bold text-primary mb-4">CAMSECURE</div>
+<p class="font-body-sm text-on-surface-variant">© 2024 CAMSECURE. All rights reserved. <br/><strong>MTN Emergency Line: 1515</strong></p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Safety Tips</a>
+<a class="font-body-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

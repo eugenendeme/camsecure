@@ -1,0 +1,473 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CAMSECURE - Public Missing Persons Feed</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#d8e2ff",
+                    "background": "#f7f9fb",
+                    "on-background": "#191c1e",
+                    "outline-variant": "#c5c5d3",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-bright": "#f7f9fb",
+                    "surface": "#f7f9fb",
+                    "secondary": "#0058be",
+                    "on-tertiary-fixed-variant": "#773205",
+                    "tertiary-container": "#6e2c00",
+                    "surface-variant": "#e0e3e5",
+                    "surface-container-low": "#f2f4f6",
+                    "inverse-primary": "#b6c4ff",
+                    "on-secondary-container": "#fefcff",
+                    "on-error": "#ffffff",
+                    "tertiary": "#4b1c00",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#d8dadc",
+                    "inverse-on-surface": "#eff1f3",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb691",
+                    "on-tertiary-fixed": "#341100",
+                    "primary-fixed": "#dce1ff",
+                    "primary-container": "#1e3a8a",
+                    "on-primary-container": "#90a8ff",
+                    "outline": "#757682",
+                    "on-tertiary-container": "#f39461",
+                    "inverse-surface": "#2d3133",
+                    "tertiary-fixed": "#ffdbcb",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#444651",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#191c1e",
+                    "on-secondary-fixed-variant": "#004395",
+                    "on-secondary-fixed": "#001a42",
+                    "surface-container-highest": "#e0e3e5",
+                    "primary": "#00236f",
+                    "secondary-container": "#2170e4",
+                    "on-primary-fixed": "#00164e",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#4059aa",
+                    "surface-container": "#eceef0",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#264191"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "data-mono": [
+                            "JetBrains Mono"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "title-md": [
+                            "Inter"
+                    ],
+                    "label-caps": [
+                            "JetBrains Mono"
+                    ],
+                    "headline-lg-mobile": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-sm": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "data-mono": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "title-md": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom scrollbar for sidebar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #c5c5d3;
+            border-radius: 4px;
+        }
+        
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-lg text-body-lg">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand -->
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined icon-fill text-primary dark:text-primary-fixed text-2xl">shield_person</span>
+<span class="text-title-md font-title-md font-bold text-primary dark:text-primary-fixed">CAMSECURE</span>
+</div>
+<!-- Links (Hidden on mobile) -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Features</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">How it Works</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Pricing</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">FAQ</a>
+</div>
+<!-- Action -->
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded font-title-md text-title-md hover:bg-primary hover:text-on-primary transition-colors">
+                Register Family
+            </button>
+</div>
+</nav>
+<!-- MTN Helpline Sticky Banner -->
+<div class="sticky top-16 z-40 bg-error text-on-error py-3 px-margin-mobile md:px-margin-desktop w-full shadow-md flex justify-center items-center gap-3 font-title-md text-title-md">
+<span class="material-symbols-outlined animate-pulse">emergency</span>
+<span>EMERGENCY HELPLINE: Call <strong class="font-display-lg text-title-md">1515</strong> (Free on MTN)</span>
+<span class="material-symbols-outlined animate-pulse">emergency</span>
+</div>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col md:flex-row max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-8 gap-gutter relative mt-0">
+<!-- Sidebar / Filters -->
+<aside class="w-full md:w-80 shrink-0">
+<div class="sticky top-[120px] bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col gap-6 custom-scrollbar max-h-[calc(100vh-140px)] overflow-y-auto">
+<div class="flex items-center gap-2 border-b border-outline-variant/30 pb-4">
+<span class="material-symbols-outlined text-primary">filter_list</span>
+<h2 class="font-title-md text-title-md text-on-surface">Search Filters</h2>
+</div>
+<!-- Search Input -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Case ID or Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-3 py-2 bg-surface border border-outline-variant rounded font-data-mono text-data-mono text-on-surface focus:border-secondary-container focus:ring-1 focus:ring-secondary-container outline-none transition-all placeholder:text-outline-variant" placeholder="Enter keywords..." type="text">
+</div>
+</div>
+<!-- Status Filter -->
+<div class="flex flex-col gap-3">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Status</label>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-4 h-4 rounded border-outline-variant text-secondary-container focus:ring-secondary-container" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">Active Search</span>
+<span class="ml-auto font-data-mono text-data-mono text-outline-variant text-xs">241</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant text-secondary-container focus:ring-secondary-container" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">Recently Found</span>
+<span class="ml-auto font-data-mono text-data-mono text-outline-variant text-xs">89</span>
+</label>
+</div>
+</div>
+<!-- Region Filter -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Last Seen Region</label>
+<select class="w-full p-2 bg-surface border border-outline-variant rounded font-body-sm text-body-sm text-on-surface focus:border-secondary-container focus:ring-1 focus:ring-secondary-container outline-none appearance-none cursor-pointer">
+<option value="all">All Regions</option>
+<option value="khomas">Khomas</option>
+<option value="erongo">Erongo</option>
+<option value="oshana">Oshana</option>
+<option value="kavango">Kavango East</option>
+</select>
+</div>
+<!-- Age Group Filter -->
+<div class="flex flex-col gap-3">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Age Group</label>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-1 px-2 border border-secondary-container bg-secondary-fixed text-on-secondary-fixed-variant rounded font-data-mono text-data-mono text-center hover:bg-secondary-fixed-dim transition-colors">0-12</button>
+<button class="py-1 px-2 border border-outline-variant text-on-surface-variant rounded font-data-mono text-data-mono text-center hover:bg-surface-container transition-colors">13-17</button>
+<button class="py-1 px-2 border border-outline-variant text-on-surface-variant rounded font-data-mono text-data-mono text-center hover:bg-surface-container transition-colors">18-60</button>
+<button class="py-1 px-2 border border-outline-variant text-on-surface-variant rounded font-data-mono text-data-mono text-center hover:bg-surface-container transition-colors">60+</button>
+</div>
+</div>
+<!-- Apply Filters Action -->
+<div class="pt-4 mt-auto border-t border-outline-variant/30">
+<button class="w-full bg-surface-container text-on-surface py-2 rounded font-title-md text-title-md hover:bg-surface-container-highest transition-colors border border-outline-variant/50">
+                        Reset Filters
+                    </button>
+</div>
+</div>
+</aside>
+<!-- Feed Canvas -->
+<div class="flex-grow flex flex-col gap-6">
+<!-- Header/Controls -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">Active Reports</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Showing 241 active cases nationwide.</p>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest border border-outline-variant/30 rounded px-3 py-1.5 shadow-sm">
+<span class="material-symbols-outlined text-outline-variant text-sm">sort</span>
+<select class="bg-transparent border-none outline-none font-data-mono text-data-mono text-on-surface cursor-pointer pr-4 focus:ring-0">
+<option>Most Urgent</option>
+<option>Most Recent</option>
+<option>Oldest First</option>
+</select>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: Urgent/Critical -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(30,58,138,0.05)] border border-outline-variant/20 flex flex-col hover:shadow-[0_8px_30px_rgba(30,58,138,0.12)] hover:border-secondary-container/30 transition-all duration-300 group">
+<div class="relative aspect-square w-full overflow-hidden">
+<img alt="Missing Person Photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A realistic, high-resolution portrait of a young woman with dark curly hair and a neutral expression, set against a blurred outdoor background. The image is styled for a professional corporate modern missing person database UI, with soft even lighting reflecting a clean light-mode aesthetic and cool color temperatures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC88kLyh_Q5beT1FFNzyKdYMYf2KYz83aqlVPKB26TnAzw5VXk8voK_R5UkOKJYpd7Yoif9rvGkVqQfQj1WQD_SIjhJssVzJaHC-RgQjpnpduoXWXMaIGGy67ml00WVY_IWFKbTgbKCMgop3mvsSPUXlX_DEzoyYWA3k_AhkK3Bp56L9R5SfENQl6ZeFjUl0qTkkNJ8BYRIQPVf0z4FiQWZQBeG7X5WeGf0vKDvFExD3z7dfMDlQJu3aVoATFtvHYD7q_B_1kql4JA">
+<!-- Glassmorphism overlay gradient at bottom -->
+<div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent"></div>
+<!-- Status Chip -->
+<div class="absolute top-3 right-3 bg-error text-on-error font-label-caps text-label-caps px-2.5 py-1 rounded shadow-md flex items-center gap-1 backdrop-blur-md">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                            CRITICAL
+                        </div>
+<!-- Case ID overlay -->
+<div class="absolute bottom-3 left-3 font-data-mono text-data-mono text-white/90 text-sm drop-shadow-md">
+                            ID: NAM-24-081
+                        </div>
+</div>
+<div class="p-5 flex flex-col gap-4 flex-grow">
+<div>
+<h3 class="font-title-md text-title-md text-on-surface line-clamp-1">Maria Nandi</h3>
+<div class="font-data-mono text-data-mono text-on-surface-variant flex items-center gap-2 mt-1">
+<span>Age: 11</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Female</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 py-3 border-y border-outline-variant/20">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-outline-variant text-[18px] mt-0.5">location_on</span>
+<span class="font-data-mono text-data-mono text-on-surface">Katutura, Windhoek</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-outline-variant text-[18px] mt-0.5">calendar_clock</span>
+<span class="font-data-mono text-data-mono text-on-surface">Last seen: 2 hrs ago</span>
+</div>
+</div>
+<button class="mt-auto w-full bg-error text-on-error py-2.5 rounded font-title-md text-title-md flex justify-center items-center gap-2 hover:bg-[#93000a] transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">campaign</span>
+                            Report Sighting
+                        </button>
+</div>
+</div>
+<!-- Card 2: Active -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(30,58,138,0.05)] border border-outline-variant/20 flex flex-col hover:shadow-[0_8px_30px_rgba(30,58,138,0.12)] hover:border-secondary-container/30 transition-all duration-300 group">
+<div class="relative aspect-square w-full overflow-hidden">
+<img alt="Missing Person Photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A realistic, high-resolution portrait of a middle-aged man with short hair and a serious expression, set against a solid light gray backdrop. The image is styled for a professional corporate modern missing person database UI, with soft even lighting reflecting a clean light-mode aesthetic and cool color temperatures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcLpCH62kRogf8kb7bqzWXVs6aPfP25QmVgawrg1nlvb3caSWlddexp876lHWUvDZB0iXNQuwLPBnb0Gx1i8HxdObVAvzhISeYAQC-XvskOXcIseIDKtuESu_ybAK4txM3FUa_1enKYiF4yKUyEkn140syZEwBjS2reR6C_rGxUrJXZKLIfXCxfqlTRY6o6E1rd6ICu2R8pP4XNZwRG_hrQLryakM4S66JqpqQKoe6d_aSY7lOT-8t_F7z4-HKFoid2wLzaEAI0T4">
+<div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent"></div>
+<!-- Status Chip -->
+<div class="absolute top-3 right-3 bg-secondary-container text-on-secondary-container font-label-caps text-label-caps px-2.5 py-1 rounded shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">search</span>
+                            ACTIVE
+                        </div>
+<div class="absolute bottom-3 left-3 font-data-mono text-data-mono text-white/90 text-sm drop-shadow-md">
+                            ID: NAM-24-079
+                        </div>
+</div>
+<div class="p-5 flex flex-col gap-4 flex-grow">
+<div>
+<h3 class="font-title-md text-title-md text-on-surface line-clamp-1">Johannes Smit</h3>
+<div class="font-data-mono text-data-mono text-on-surface-variant flex items-center gap-2 mt-1">
+<span>Age: 45</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Male</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 py-3 border-y border-outline-variant/20">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-outline-variant text-[18px] mt-0.5">location_on</span>
+<span class="font-data-mono text-data-mono text-on-surface">Swakopmund CBD</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-outline-variant text-[18px] mt-0.5">calendar_clock</span>
+<span class="font-data-mono text-data-mono text-on-surface">Last seen: Oct 12, 2023</span>
+</div>
+</div>
+<button class="mt-auto w-full bg-primary-container text-on-primary-container py-2.5 rounded font-title-md text-title-md flex justify-center items-center gap-2 hover:bg-primary hover:text-on-primary transition-colors border border-primary-container">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+                            View Details
+                        </button>
+</div>
+</div>
+<!-- Card 3: Active (Different styling test) -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(30,58,138,0.05)] border border-outline-variant/20 flex flex-col hover:shadow-[0_8px_30px_rgba(30,58,138,0.12)] hover:border-secondary-container/30 transition-all duration-300 group">
+<div class="relative aspect-square w-full overflow-hidden">
+<div class="w-full h-full bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[64px] text-outline-variant">person_off</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute top-3 right-3 bg-secondary-container text-on-secondary-container font-label-caps text-label-caps px-2.5 py-1 rounded shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">search</span>
+                            ACTIVE
+                        </div>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur rounded-full p-1 shadow-sm" title="Verified by NamPol">
+<span class="material-symbols-outlined text-secondary-container text-[16px] icon-fill">verified</span>
+</div>
+<div class="absolute bottom-3 left-3 font-data-mono text-data-mono text-white/90 text-sm drop-shadow-md">
+                            ID: NAM-24-075
+                        </div>
+</div>
+<div class="p-5 flex flex-col gap-4 flex-grow">
+<div>
+<h3 class="font-title-md text-title-md text-on-surface line-clamp-1">Unknown (Jane Doe)</h3>
+<div class="font-data-mono text-data-mono text-on-surface-variant flex items-center gap-2 mt-1">
+<span>Age: Est. 20-25</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>Female</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 py-3 border-y border-outline-variant/20">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-outline-variant text-[18px] mt-0.5">location_on</span>
+<span class="font-data-mono text-data-mono text-on-surface">B1 Highway, Okahandja</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-outline-variant text-[18px] mt-0.5">calendar_clock</span>
+<span class="font-data-mono text-data-mono text-on-surface">Last seen: Oct 10, 2023</span>
+</div>
+</div>
+<button class="mt-auto w-full bg-primary-container text-on-primary-container py-2.5 rounded font-title-md text-title-md flex justify-center items-center gap-2 hover:bg-primary hover:text-on-primary transition-colors border border-primary-container">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+                            View Details
+                        </button>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="flex justify-center items-center pt-8 pb-12">
+<button class="px-6 py-3 border border-secondary-container text-secondary-container rounded font-title-md text-title-md hover:bg-secondary-fixed transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined">sync</span>
+                    Load More Cases
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-12 border-t border-outline-variant mt-auto">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Brand / Copyright -->
+<div class="flex flex-col gap-4 col-span-1 md:col-span-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined icon-fill text-primary dark:text-primary-fixed text-2xl">shield_person</span>
+<span class="text-title-md font-title-md font-bold text-primary dark:text-primary-fixed">CAMSECURE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+                    © 2024 CAMSECURE. All rights reserved. MTN Emergency Line: 1515
+                </p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-secondary-container">verified_user</span>
+<span class="font-data-mono text-data-mono text-on-surface-variant text-xs">Secure Database Framework</span>
+</div>
+</div>
+<!-- Links -->
+<div class="flex flex-col gap-3 col-span-1">
+<h4 class="font-title-md text-title-md text-on-surface mb-1">Resources</h4>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-3 col-span-1">
+<h4 class="font-title-md text-title-md text-on-surface mb-1">Support</h4>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Safety Tips</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>

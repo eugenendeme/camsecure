@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CAMSECURE | Emergency Broadcasts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#ffb691",
+                    "outline-variant": "#c5c5d3",
+                    "on-tertiary-fixed-variant": "#773205",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#fefcff",
+                    "background": "#f7f9fb",
+                    "primary": "#00236f",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#f39461",
+                    "on-secondary-fixed": "#001a42",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#444651",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#b6c4ff",
+                    "tertiary-fixed": "#ffdbcb",
+                    "surface-container-low": "#f2f4f6",
+                    "surface": "#f7f9fb",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#264191",
+                    "on-primary-fixed": "#00164e",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "tertiary-container": "#6e2c00",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "primary-container": "#1e3a8a",
+                    "surface-tint": "#4059aa",
+                    "surface-variant": "#e0e3e5",
+                    "secondary-container": "#2170e4",
+                    "outline": "#757682",
+                    "surface-dim": "#d8dadc",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "on-primary-container": "#90a8ff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#004395",
+                    "tertiary": "#4b1c00",
+                    "on-background": "#191c1e",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#d8e2ff",
+                    "surface-bright": "#f7f9fb",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-container": "#eceef0",
+                    "on-tertiary-fixed": "#341100",
+                    "primary-fixed": "#dce1ff",
+                    "secondary": "#0058be",
+                    "on-surface": "#191c1e",
+                    "inverse-surface": "#2d3133"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "40px"
+            },
+            "fontFamily": {
+                    "label-caps": ["JetBrains Mono"],
+                    "body-sm": ["Inter"],
+                    "data-mono": ["JetBrains Mono"],
+                    "title-md": ["Inter"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "title-md": ["18px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .pulse-critical {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .7; transform: scale(1.05); }
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg antialiased">
+<!-- Shell: SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest backdrop-blur-md shadow-md z-40 flex flex-col py-margin-desktop overflow-hidden border-r border-outline-variant/10">
+<div class="px-6 mb-10">
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary">CAMSECURE</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant opacity-70">LAW ENFORCEMENT PORTAL</p>
+</div>
+<nav class="flex-1 overflow-y-auto custom-scrollbar px-3 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-lg">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-body-lg">Live GPS</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">shield</span>
+<span class="font-body-lg">Safe Zones</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">folder_shared</span>
+<span class="font-body-lg">Family Directory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-body-lg">Activity &amp; History</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">hub</span>
+<span class="font-body-lg">Partner Network</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold border-r-4 border-primary bg-primary/5 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">broadcast_on_personal</span>
+<span class="font-body-lg">Emergency Broadcasts</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-lg">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-6 pt-6 border-t border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white overflow-hidden shadow-inner">
+<img alt="Admin Avatar" data-alt="A professional headshot of a law enforcement administrator in a crisp white uniform, photographed against a neutral corporate background. The lighting is bright and even, conveying a sense of authority and trustworthiness, consistent with a high-security government portal aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuVaIQl5m1gL0lm76Rcat-A8haAV1m3h1-qZoruKwGpy3wPYaIyZTFbQWS0IqvcvVqZSiRlM5t-G_rZSwj83pTs7vO3rWspGC7490MQbPzAZae6KWXg4toHoyidglmx394XArGDcyaGiNM0D5MutgguHdK-mxgeYE-zVP-UC029LJwdiOZPI06eDdln398Maod_jHx-pVd2-wi25F39issEyLLwLPLj7EmctRqjCEnYmwoIgpA9cg1seIePGjlrMR9BGIZw6fAI7E"/>
+</div>
+<div>
+<p class="font-title-md text-sm leading-tight">Cmdr. Sterling</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant">Chief Dispatch</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-64 min-h-screen px-margin-desktop py-12 relative">
+<!-- Header Section -->
+<header class="flex justify-between items-end mb-10">
+<div>
+<nav class="flex items-center gap-2 mb-2 text-on-surface-variant opacity-60">
+<span class="font-label-caps text-label-caps">PORTAL</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="font-label-caps text-label-caps">ALERTS</span>
+</nav>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Emergency Broadcasts</h2>
+</div>
+<button class="bg-error text-on-error font-title-md px-6 py-3 rounded-lg flex items-center gap-2 shadow-lg hover:shadow-xl hover:bg-red-700 transition-all pulse-critical">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">report</span>
+                Report Incident
+            </button>
+</header>
+<!-- Filters Section -->
+<section class="mb-8 overflow-x-auto whitespace-nowrap pb-2">
+<div class="flex items-center gap-3">
+<button class="px-5 py-2 rounded-full bg-primary text-white font-medium text-sm transition-all shadow-sm">All Broadcasts</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant bg-white text-on-surface-variant hover:bg-surface-container-high font-medium text-sm transition-all">Missing Persons</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant bg-white text-on-surface-variant hover:bg-surface-container-high font-medium text-sm transition-all">Weather Advisories</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant bg-white text-on-surface-variant hover:bg-surface-container-high font-medium text-sm transition-all">Security Threats</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant bg-white text-on-surface-variant hover:bg-surface-container-high font-medium text-sm transition-all">Public Health</button>
+</div>
+</section>
+<!-- Feed Grid -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- CRITICAL ALERT: AMBER ALERT STYLE -->
+<div class="col-span-12 lg:col-span-8 bg-white rounded-xl shadow-[0_4px_20px_rgba(30,58,138,0.1)] border-l-8 border-error overflow-hidden group">
+<div class="flex flex-col md:flex-row">
+<div class="w-full md:w-1/3 relative overflow-hidden">
+<img alt="Missing Person" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A focused, clear portrait of a missing child, a young boy with expressive dark eyes and curly black hair, looking directly into the camera. The background is softly blurred to keep focus on the subject. The overall aesthetic is clean, high-contrast, and professional, mirroring a high-priority missing persons alert format." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYhL0DVXWQwD38rlu0an6wS-bC7dzWNpmQjHey2Rh1ojRWuTAfeVgmD_xG4QAkpJJklmBjt-QAsqqJNCaC7d1sB1GEuzHYMzwFrAnF9KWHvn61qxhN4vdfreJksw--T7wisVnTNQfokYdWG6ACRjdlvOD5SHhfP-0BNFs1GUi4CVrQmukDK8SQc6BOVHJheHFq39sUDfug78Vl7kCHjjEOl_vwddt-A6RCkhyNQ5UebhtSKL2d5Yzi8f4s2ux5LI_ALpHw_0f4ses"/>
+<div class="absolute top-4 left-4 bg-error text-white px-3 py-1 font-label-caps text-[10px] rounded-full shadow-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">priority_high</span>
+                            CRITICAL
+                        </div>
+</div>
+<div class="flex-1 p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-lg text-2xl text-primary mb-1">AMBER Alert: Marcus T.</h3>
+<p class="font-data-mono text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                                    Broadcasted: 12 minutes ago
+                                </p>
+</div>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container-high p-2 rounded-full transition-colors">more_vert</span>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/30">
+<p class="font-label-caps text-[10px] text-on-surface-variant">LAST SEEN</p>
+<p class="font-title-md text-sm">14:15 near Downtown Metro</p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/30">
+<p class="font-label-caps text-[10px] text-on-surface-variant">DISTRICT</p>
+<p class="font-title-md text-sm">Central Hub, Sector 4</p>
+</div>
+</div>
+<p class="text-on-surface-variant mb-8 line-clamp-2">Marcus was last seen wearing a blue hoodie and carrying a yellow backpack. Authorities believe he may be in the vicinity of the central park area. Community search teams are requested in Sector 4 immediately.</p>
+<div class="flex flex-wrap items-center gap-4">
+<button class="bg-primary text-white font-title-md px-6 py-2.5 rounded-lg text-sm hover:shadow-md transition-all">View Details &amp; Map</button>
+<button class="border border-primary text-primary font-title-md px-6 py-2.5 rounded-lg text-sm flex items-center gap-2 hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined text-sm">share</span>
+                                Share to Community
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- URGENT: WEATHER -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 glass-panel rounded-xl shadow-sm border border-outline-variant/30 flex flex-col">
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<div class="bg-tertiary-container/10 text-tertiary-container px-3 py-1 font-label-caps text-[10px] rounded-full border border-tertiary-container/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">warning</span>
+                            URGENT
+                        </div>
+<span class="font-data-mono text-[11px] text-on-surface-variant">10:30 AM</span>
+</div>
+<h3 class="font-title-md text-lg text-primary mb-3">Flood Warning: Douala Littoral</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Heavy rainfall expected to continue for the next 6 hours. Potential flash flooding in low-lying residential sectors. Residents advised to secure property and avoid main drainage routes.</p>
+<div class="mt-auto pt-4 border-t border-outline-variant/20 flex justify-between items-center">
+<span class="font-label-caps text-[11px] text-on-surface-variant">SOURCE: METEO HUB</span>
+<a class="text-secondary font-bold text-sm flex items-center gap-1 hover:underline" href="#">
+                            View Protocols
+                            <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="h-32 w-full mt-auto relative bg-slate-200">
+<img alt="Weather Map" class="h-full w-full object-cover" data-alt="A cinematic, moody satellite view of heavy storm clouds gathering over a tropical coastal city like Douala. The scene uses deep blues, dark greys, and dramatic lighting to convey a sense of weather-related urgency while maintaining a sophisticated, high-tech map interface aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmFfHeFZxd02EYRh2tY7-EQz6jUP3bD_LLkmyGOpSu8_NH0EA6JjMMvrvmgTU06g1jpRdDtUU5LbIiPrzAnsbhj7MDsbKF9OoYsqp1okWV1_RebZfSZ00Ad_Q_uV454UVods_PwwFzRGyT9Qy89Q9gPtsUVQ6jd1qPFoAJj52b9bHQ0Y-1pmiFL7EiJokTm1P4vBpBMSfsMyH21S4VU4CU3rkWKbYPqBmZGWkIjivPo7KLymqZDwoiIRsV4jjZwyoXhXYi1yFzbwg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</div>
+</div>
+<!-- STANDARD: SECURITY TIPS -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 bg-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col border-t-4 border-primary">
+<div class="flex items-center justify-between mb-4">
+<div class="bg-primary/10 text-primary px-3 py-1 font-label-caps text-[10px] rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">info</span>
+                        STANDARD
+                    </div>
+<span class="font-data-mono text-[11px] text-on-surface-variant">08:15 AM</span>
+</div>
+<div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h3 class="font-title-md text-lg text-primary mb-3">Safety Update: Neighborhood Watch</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-1">New digital verification protocols for community patrol officers are now active. Please ensure your CamSecure ID is updated to the latest 2.4.0 version to access shared zone data.</p>
+<div class="pt-4 border-t border-outline-variant/20 flex justify-end">
+<button class="text-primary font-bold text-sm hover:underline">Update Now</button>
+</div>
+</div>
+<!-- STANDARD: POLICE ANNOUNCEMENT -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 bg-white rounded-xl shadow-sm border border-outline-variant/30 p-6 flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<div class="bg-primary/10 text-primary px-3 py-1 font-label-caps text-[10px] rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">campaign</span>
+                        UPDATE
+                    </div>
+<span class="font-data-mono text-[11px] text-on-surface-variant">Yesterday</span>
+</div>
+<h3 class="font-title-md text-lg text-primary mb-3">Holiday Patrol Schedule</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-1">Public Safety Department announces increased visibility in commercial districts for the upcoming festival weekend. Emergency response times remain unaffected.</p>
+<div class="pt-4 border-t border-outline-variant/20">
+<button class="w-full py-2 bg-surface-container text-primary font-title-md rounded-lg text-sm hover:bg-surface-container-high transition-all">Download Schedule</button>
+</div>
+</div>
+<!-- SECURITY THREAT CARD -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 bg-white rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden flex flex-col border-l-4 border-error/50">
+<div class="p-6">
+<div class="flex items-center justify-between mb-4">
+<div class="bg-error/10 text-error px-3 py-1 font-label-caps text-[10px] rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">local_police</span>
+                            SECURITY
+                        </div>
+<span class="font-data-mono text-[11px] text-on-surface-variant">2h ago</span>
+</div>
+<h3 class="font-title-md text-lg text-primary mb-3">Attempted System Intrusion</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Minor unauthorized access attempt detected in Sector 2 Node. Security protocols escalated. No data leak confirmed, but users are advised to reset Multi-Factor Authentication.</p>
+<div class="flex gap-2">
+<button class="flex-1 py-2 bg-error text-white rounded-lg text-xs font-bold hover:bg-red-700 transition-all">Reset MFA</button>
+<button class="flex-1 py-2 bg-surface-container text-on-surface-variant rounded-lg text-xs font-bold">Report Anomaly</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination / Load More -->
+<div class="flex justify-center mt-12">
+<button class="group flex items-center gap-2 px-8 py-3 bg-white border border-outline-variant rounded-full text-primary font-title-md hover:bg-primary hover:text-white transition-all shadow-sm">
+                Load Past Broadcasts
+                <span class="material-symbols-outlined transition-transform group-hover:translate-y-1">expand_more</span>
+</button>
+</div>
+</main>
+<!-- Interactions -->
+<script>
+        // Tab switching visual effect
+        const filterButtons = document.querySelectorAll('section button');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white');
+                    b.classList.add('bg-white', 'text-on-surface-variant', 'border', 'border-outline-variant');
+                });
+                btn.classList.add('bg-primary', 'text-white');
+                btn.classList.remove('bg-white', 'text-on-surface-variant', 'border', 'border-outline-variant');
+            });
+        });
+
+        // Simple hover effect for glass cards
+        const glassCards = document.querySelectorAll('.glass-panel');
+        glassCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+                card.style.transition = 'all 0.3s ease';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

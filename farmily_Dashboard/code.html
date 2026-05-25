@@ -1,0 +1,278 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CAMSECURE - Family Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#d8e2ff",
+                        "background": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "outline-variant": "#c5c5d3",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-bright": "#f7f9fb",
+                        "surface": "#f7f9fb",
+                        "secondary": "#0058be",
+                        "on-tertiary-fixed-variant": "#773205",
+                        "tertiary-container": "#6e2c00",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container-low": "#f2f4f6",
+                        "inverse-primary": "#b6c4ff",
+                        "on-secondary-container": "#fefcff",
+                        "on-error": "#ffffff",
+                        "tertiary": "#4b1c00",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d8dadc",
+                        "inverse-on-surface": "#eff1f3",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "on-tertiary-fixed": "#341100",
+                        "primary-fixed": "#dce1ff",
+                        "primary-container": "#1e3a8a",
+                        "on-primary-container": "#90a8ff",
+                        "outline": "#757682",
+                        "on-tertiary-container": "#f39461",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#444651",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-secondary-fixed-variant": "#004395",
+                        "on-secondary-fixed": "#001a42",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary": "#00236f",
+                        "secondary-container": "#2170e4",
+                        "on-primary-fixed": "#00164e",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#4059aa",
+                        "surface-container": "#eceef0",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#264191"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-mono": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "title-md": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title-md": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.05);
+        }
+        .surface-card {
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.15);
+        }
+        .pulse-critical {
+            animation: pulse-orange 2s infinite;
+        }
+        @keyframes pulse-orange {
+            0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto">
+<div class="text-title-md font-title-md font-bold text-primary dark:text-primary-fixed">CAMSECURE</div>
+<div class="hidden md:flex space-x-8">
+<a class="font-body-lg text-body-lg text-primary dark:text-primary-fixed border-b-2 border-primary transition-colors" href="#">Features</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">How it Works</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Pricing</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">FAQ</a>
+</div>
+<button class="bg-primary-container text-on-primary border border-primary-container rounded px-4 py-2 font-title-md text-title-md hover:bg-primary transition-colors">Register Family</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full flex flex-col gap-gutter">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+<div>
+<h1 class="font-display-lg text-display-lg text-primary">Family Dashboard</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Overview of registered members and recent security alerts.</p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container text-on-primary rounded lg px-4 py-2 font-title-md text-title-md flex items-center gap-2 hover:bg-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">add</span>
+                    Add Member
+                </button>
+<button class="bg-[#F97316] text-on-primary rounded lg px-4 py-2 font-title-md text-title-md font-bold flex items-center gap-2 pulse-critical hover:bg-[#EA580C] transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+                    Report Missing
+                </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Registered Members Overview (Main Col) -->
+<div class="md:col-span-8 flex flex-col gap-gutter">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Registered Members</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+<!-- Member Card 1 -->
+<div class="bg-surface-container-lowest surface-card rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute top-4 right-4 bg-[#22C55E] text-on-primary font-label-caps text-label-caps px-2 py-1 rounded-full flex items-center gap-1 z-10">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Safe
+                        </div>
+<div class="flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-outline-variant group-hover:border-[#3B82F6] transition-colors relative">
+<img alt="Sarah Connor profile picture" class="w-full h-full object-cover" data-alt="A portrait of a young woman with a calm expression, softly lit against a modern, bright background. The lighting highlights a sleek, technological aesthetic, incorporating subtle glass-like reflections. The overall color palette is predominantly cool, with a mix of pristine whites, subtle greys, and a hint of tech blue. The mood is secure and serene, reflecting a high-end, reliable digital environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7uq8pacmHR18y4PIAm6LL6j15NdcPru9on5023NS_RBqidI_ir8ITi8EEwuMaNirhoRjZTZxVoEq0VCxQNw4n1B0OKwLQVIsd6RYD3NzSKCX_G7uFsp7LhheUJj5S9coglowvNmp2LmgyF72pliMrFKrH9Xrqkf5TB5pDEvbdUckzPFyiroMdKvaMRyTd6CyWeJ_w6ysbjX_8rgVqCIYpdXhnk6UFi7S4-1xZKTB5IlqYT5aiR0x_-NZ22ea51SQ69wkTwUiWHQg">
+</div>
+<h3 class="font-title-md text-title-md text-primary">Sarah Connor</h3>
+<p class="font-data-mono text-data-mono text-outline mt-1">ID: CAM-9942-A</p>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">location_on</span>
+                                School Zone
+                            </div>
+<span class="font-data-mono text-data-mono text-outline">10 mins ago</span>
+</div>
+</div>
+<!-- Member Card 2 -->
+<div class="bg-surface-container-lowest surface-card rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute top-4 right-4 bg-[#3B82F6] text-on-primary font-label-caps text-label-caps px-2 py-1 rounded-full flex items-center gap-1 z-10">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">search</span>
+                            Active Search
+                        </div>
+<div class="flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-[#3B82F6] group-hover:border-[#3B82F6] transition-colors relative">
+<img alt="John Connor profile picture" class="w-full h-full object-cover" data-alt="A photograph of a young boy looking slightly off-camera, rendered with a slightly clinical, high-definition quality. The background is a clean, minimal white space, emphasizing the subject. The lighting is bright and even, typical of an ID photo but with a modern, polished finish. The color scheme relies heavily on cool tones, specifically slate and tech blue accents, conveying a sense of engineered precision and urgent care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf0KqalixN7Fj3poWdcUfqCXltAY-MiFb3Sx1weNa0r22O3UyB8BIPmORnUp40L8PduUqWERWtNBmlyGDiJ1YleqenPqL_7AX1rZ5Czq9sBeacuU6pwwaeAJs6h8SoZ8qQRaMj7svvEVJE7Z8ZJfyUa8ZjftPLC65Nfd0aeTpkcSD6J9GWVyFItn8t2zT8Raf5Egg9FgP6RKEt7o81sObxMTQYCPxauYx9wq_f1sbbmZX_-c1_Csgz_iWOEffiiuHKeN6PzhjzTyU">
+</div>
+<h3 class="font-title-md text-title-md text-primary">John Connor</h3>
+<p class="font-data-mono text-data-mono text-outline mt-1">ID: CAM-9943-B</p>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant/30 flex justify-between items-center">
+<div class="flex items-center gap-2 text-[#3B82F6] font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">radar</span>
+                                Tracking...
+                            </div>
+<span class="font-data-mono text-data-mono text-outline">Now</span>
+</div>
+</div>
+<!-- Member Card 3 (Empty State) -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-dashed border-outline-variant flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-variant transition-colors min-h-[250px]">
+<span class="material-symbols-outlined text-outline text-[48px] mb-2" style="font-variation-settings: 'FILL' 0;">person_add</span>
+<h3 class="font-title-md text-title-md text-on-surface-variant">Register New</h3>
+<p class="font-body-sm text-body-sm text-outline mt-1 max-w-[200px]">Add another family member to secure their profile.</p>
+</div>
+</div>
+</div>
+<!-- Quick Alerts & Management (Side Col) -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<!-- Quick Alerts Panel -->
+<div class="glass-panel rounded-xl p-6 flex flex-col h-full border border-outline-variant/20 relative">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-4">Quick Alerts</h2>
+<div class="flex flex-col gap-4 overflow-y-auto pr-2">
+<!-- Alert Item 1 -->
+<div class="flex gap-3 items-start pb-4 border-b border-outline-variant/20">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-primary flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">face</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-background font-semibold">AI Facial Match</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Potential match for John Connor at Transit Station Alpha.</p>
+<p class="font-data-mono text-data-mono text-outline mt-1 text-[11px]">10:42 AM - Confidence: 87%</p>
+</div>
+</div>
+<!-- Alert Item 2 -->
+<div class="flex gap-3 items-start pb-4 border-b border-outline-variant/20">
+<div class="w-8 h-8 rounded-full bg-[#F97316] text-on-primary flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">error</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-background font-semibold">Geofence Breach</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Wristband CAM-W-02 left designated Safe Zone.</p>
+<p class="font-data-mono text-data-mono text-outline mt-1 text-[11px]">09:15 AM - Zone: Park West</p>
+</div>
+</div>
+<!-- Alert Item 3 -->
+<div class="flex gap-3 items-start">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">battery_alert</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-background font-semibold">Low Battery</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Sarah's device battery is below 15%.</p>
+<p class="font-data-mono text-data-mono text-outline mt-1 text-[11px]">Yesterday, 08:00 PM</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Management Action -->
+<button class="bg-surface-container-lowest border border-outline text-primary rounded-lg px-4 py-3 font-title-md text-title-md flex justify-center items-center gap-2 hover:bg-surface-variant transition-colors surface-card">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">watch</span>
+                    Manage Devices
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant flat no shadows mt-auto">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div>
+<div class="text-title-md font-title-md font-bold text-primary dark:text-primary-fixed mb-4">CAMSECURE</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 CAMSECURE. All rights reserved. MTN Emergency Line: 1515</p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Safety Tips</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>

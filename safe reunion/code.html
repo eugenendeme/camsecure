@@ -1,0 +1,368 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Person Located - CAMSECURE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#b6c4ff",
+                      "tertiary": "#4b1c00",
+                      "on-primary-fixed": "#00164e",
+                      "on-surface": "#191c1e",
+                      "tertiary-fixed-dim": "#ffb691",
+                      "on-secondary-fixed-variant": "#004395",
+                      "surface-tint": "#4059aa",
+                      "secondary-container": "#2170e4",
+                      "on-tertiary-fixed": "#341100",
+                      "background": "#f7f9fb",
+                      "on-secondary-fixed": "#001a42",
+                      "on-primary-container": "#90a8ff",
+                      "primary-fixed": "#dce1ff",
+                      "on-tertiary-container": "#f39461",
+                      "on-secondary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#f2f4f6",
+                      "on-primary-fixed-variant": "#264191",
+                      "on-error": "#ffffff",
+                      "surface-variant": "#e0e3e5",
+                      "surface-bright": "#f7f9fb",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#d8dadc",
+                      "primary": "#00236f",
+                      "error": "#ba1a1a",
+                      "tertiary-container": "#6e2c00",
+                      "primary-container": "#1e3a8a",
+                      "on-tertiary-fixed-variant": "#773205",
+                      "on-surface-variant": "#444651",
+                      "inverse-surface": "#2d3133",
+                      "on-background": "#191c1e",
+                      "inverse-primary": "#b6c4ff",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed-dim": "#adc6ff",
+                      "on-secondary-container": "#fefcff",
+                      "error-container": "#ffdad6",
+                      "on-primary": "#ffffff",
+                      "inverse-on-surface": "#eff1f3",
+                      "tertiary-fixed": "#ffdbcb",
+                      "surface-container": "#eceef0",
+                      "surface-container-high": "#e6e8ea",
+                      "surface": "#f7f9fb",
+                      "outline": "#757682",
+                      "secondary-fixed": "#d8e2ff",
+                      "secondary": "#0058be",
+                      "surface-container-highest": "#e0e3e5",
+                      "outline-variant": "#c5c5d3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin-mobile": "16px",
+                      "container-max": "1280px",
+                      "margin-desktop": "40px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "data-mono": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "title-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-mono": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #F8FAFC; /* Slate Light base layer from style guidance */
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .surface-card {
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.15); /* Navy tint shadow */
+        }
+        .success-accent {
+            background-color: #10B981; /* Success Green for status */
+        }
+        .success-text {
+            color: #10B981;
+        }
+        .pulse-soft {
+            animation: pulse-soft 2s infinite;
+        }
+        @keyframes pulse-soft {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+        
+        /* Celebration particles canvas */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body class="text-on-surface antialiased min-h-screen flex flex-col relative">
+<!-- Celebration Particles -->
+<canvas id="confetti-canvas"></canvas>
+<!-- Top Navigation (Suppressed for Success/Transactional Screen as per rules) -->
+<!-- Content Canvas -->
+<main class="flex-grow flex items-center justify-center p-margin-mobile md:p-margin-desktop relative z-10">
+<div class="w-full max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main Success Card -->
+<div class="md:col-span-8 md:col-start-3 surface-card rounded-xl border border-outline-variant/30 overflow-hidden relative">
+<!-- Decorative Top Border -->
+<div class="h-2 w-full success-accent pulse-soft"></div>
+<!-- Header Area -->
+<div class="p-gutter md:p-margin-desktop border-b border-outline-variant/20 bg-surface-bright/50">
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="w-16 h-16 rounded-full success-accent flex items-center justify-center text-on-primary shadow-lg mb-2">
+<span class="material-symbols-outlined text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary md:font-display-lg md:text-display-lg hidden md:block">Safe Reunion</h1>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary md:hidden">Safe Reunion</h1>
+<p class="font-headline-lg text-headline-lg text-on-surface">Alexandre Dubois Has Been Located</p>
+</div>
+</div>
+<!-- Content Area -->
+<div class="p-gutter md:p-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-start">
+<!-- Photo Section -->
+<div class="space-y-4">
+<div class="aspect-square rounded-lg overflow-hidden border-2 border-surface-variant relative shadow-sm">
+<img alt="Alexandre Dubois portrait" class="w-full h-full object-cover" data-alt="A highly detailed, professional portrait photograph of a young man, Alexandre Dubois, looking relieved and calm. The lighting is soft and natural, emphasizing a realistic, humane aesthetic. The background is a clean, slightly out-of-focus institutional setting, fitting a corporate modern environment. The color palette incorporates subtle tech blue tones, aligning with a secure, trustworthy digital interface style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXdcIG5jIUbm4Y6_pMetW3KVDOj-5fJW44L8uPD7xYFZWA4Kqch6mqKPHIrN63i7GaYSfhqGcvS8uL47K2kKdsn4K9inf2RXBlM8lA25QjCCIFm1HUanOPo6vh5TYyW7LfNYd7x-B98gwjc_pFcojxs-wz1cwmT-Ws2OuFlylTjuW4RlYja6HTuyzAQ3bnG2yUZahVodJKrGgCGlRiyDr9ClJUT3bYeNwnH0PQPCpv3s72eEXwA0htQmXXBCP5xVAlho9pXhQrFnQ">
+<!-- Status Chip Overlay -->
+<div class="absolute top-4 right-4 success-accent text-on-primary font-label-caps text-label-caps px-3 py-1.5 rounded-full shadow-md flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                                    SECURE &amp; SAFE
+                                </div>
+</div>
+</div>
+<!-- Data Section -->
+<div class="space-y-6">
+<!-- Case Details Bento Box -->
+<div class="glass-panel p-4 rounded-lg border border-outline-variant/40 space-y-3">
+<h3 class="font-title-md text-title-md text-primary flex items-center gap-2 border-b border-outline-variant/20 pb-2">
+<span class="material-symbols-outlined text-surface-tint">fingerprint</span>
+                                    Case Verification
+                                </h3>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">Case ID</p>
+<p class="font-data-mono text-data-mono text-on-surface">CAM-9943-B</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">Status</p>
+<p class="font-data-mono text-data-mono success-text font-bold">Resolved</p>
+</div>
+<div class="col-span-2">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">Time of Recovery</p>
+<p class="font-data-mono text-data-mono text-on-surface">2024-10-24 14:32 WAT</p>
+</div>
+</div>
+</div>
+<!-- Location Info -->
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline-variant/30 space-y-2">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">location_on</span>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Found At</p>
+<p class="font-body-lg text-body-lg text-on-surface font-medium">Central Police Station, Douala</p>
+</div>
+</div>
+</div>
+<!-- Next Steps -->
+<div class="border-l-4 border-primary pl-4 space-y-2">
+<p class="font-title-md text-title-md text-primary">Next Steps for Family</p>
+<div class="flex items-center gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-lg text-surface-tint">support_agent</span>
+<span>Coordinator assigned: <strong>Agent Sarah Ndi</strong></span>
+</div>
+<div class="flex items-center gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-lg text-error">emergency</span>
+<span>Helpline: <strong>1515</strong> (Mention Case ID)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="p-gutter md:p-margin-desktop bg-surface-container-lowest border-t border-outline-variant/20 flex flex-col sm:flex-row gap-4 justify-end items-center">
+<button class="w-full sm:w-auto px-6 py-3 rounded border border-secondary text-secondary font-body-lg text-body-lg hover:bg-secondary/5 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">download</span>
+                        Download Reunion Certificate
+                    </button>
+<button class="w-full sm:w-auto px-6 py-3 rounded bg-primary-container text-on-primary font-body-lg text-body-lg shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">description</span>
+                        View Full Resolution Report
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Simple confetti effect for celebration
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const particles = [];
+            const colors = ['#10B981', '#3B82F6', '#1E3A8A', '#ffffff'];
+
+            for (let i = 0; i < 50; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    size: Math.random() * 5 + 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speed: Math.random() * 2 + 1,
+                    angle: Math.random() * 360,
+                    spin: Math.random() * 0.2 - 0.1
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                particles.forEach(p => {
+                    p.y += p.speed;
+                    p.angle += p.spin;
+                    
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.angle);
+                    ctx.fillStyle = p.color;
+                    ctx.globalAlpha = 0.6;
+                    ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+                    ctx.restore();
+
+                    if (p.y > canvas.height) {
+                        p.y = -10;
+                        p.x = Math.random() * canvas.width;
+                    }
+                });
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+            
+            // Stop after a few seconds to not annoy user
+            setTimeout(() => {
+                canvas.style.opacity = '0';
+                canvas.style.transition = 'opacity 2s ease';
+                setTimeout(() => canvas.remove(), 2000);
+            }, 5000);
+        });
+    </script>
+</body></html>

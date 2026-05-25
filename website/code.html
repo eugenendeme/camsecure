@@ -1,0 +1,465 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CAMSECURE - Africa's First Unified Missing Persons Platform</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Hanken+Grotesk:wght@600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-on-surface": "#eff1f3",
+                      "on-background": "#191c1e",
+                      "background": "#f7f9fb",
+                      "on-primary-fixed-variant": "#264191",
+                      "tertiary": "#4b1c00",
+                      "secondary-fixed-dim": "#adc6ff",
+                      "tertiary-fixed": "#ffdbcb",
+                      "on-secondary-fixed-variant": "#004395",
+                      "surface-container-low": "#f2f4f6",
+                      "on-primary-container": "#90a8ff",
+                      "on-error": "#ffffff",
+                      "tertiary-container": "#6e2c00",
+                      "on-secondary-fixed": "#001a42",
+                      "primary-container": "#1e3a8a",
+                      "on-tertiary-container": "#f39461",
+                      "surface-dim": "#d8dadc",
+                      "on-secondary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-container": "#fefcff",
+                      "secondary-container": "#2170e4",
+                      "inverse-primary": "#b6c4ff",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-error-container": "#93000a",
+                      "on-surface": "#191c1e",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#dce1ff",
+                      "on-surface-variant": "#444651",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#341100",
+                      "on-primary-fixed": "#00164e",
+                      "surface-container": "#eceef0",
+                      "surface-container-high": "#e6e8ea",
+                      "inverse-surface": "#2d3133",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#00236f",
+                      "secondary": "#0058be",
+                      "surface-tint": "#4059aa",
+                      "primary-fixed-dim": "#b6c4ff",
+                      "outline-variant": "#c5c5d3",
+                      "surface-bright": "#f7f9fb",
+                      "outline": "#757682",
+                      "surface-variant": "#e0e3e5",
+                      "secondary-fixed": "#d8e2ff",
+                      "tertiary-fixed-dim": "#ffb691",
+                      "on-tertiary-fixed-variant": "#773205",
+                      "surface": "#f7f9fb"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "margin-desktop": "40px",
+                      "unit": "8px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "data-mono": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-mono": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "title-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.15);
+            border: 1px solid rgba(197, 197, 211, 0.2);
+        }
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .urgent-pulse {
+            animation: pulse-orange 2s infinite;
+        }
+        @keyframes pulse-orange {
+            0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm fixed top-0 w-full z-50 transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto">
+<div class="text-title-md font-title-md font-bold text-primary dark:text-primary-fixed tracking-tight">CAMSECURE</div>
+<nav class="hidden md:flex space-x-8">
+<a class="font-body-lg text-body-lg text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors" href="#features">Features</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors" href="#how-it-works">How it Works</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors" href="#pricing">Pricing</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors" href="#faq">FAQ</a>
+</nav>
+<button class="bg-[#1E3A8A] text-on-primary font-body-lg text-body-lg px-4 py-2 rounded shadow hover:bg-primary transition-colors">
+                Register Family
+            </button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="pt-32 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary via-background to-background pointer-events-none"></div>
+<div class="relative z-10 grid md:grid-cols-2 gap-gutter items-center">
+<div>
+<h1 class="font-display-lg text-display-lg text-primary mb-6">
+                    Bring Them Home Safely. <br>
+<span class="text-gradient bg-gradient-to-r from-primary to-secondary">Africa's First Unified Missing Persons Platform.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">
+                    Combining AI facial recognition, QR safe-contact identification, and GPS tracking to protect families in Cameroon during the critical first hours.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-[#1E3A8A] text-on-primary px-6 py-3 rounded font-title-md text-title-md shadow-md hover:bg-primary transition-all">
+                        Register Your Family
+                    </button>
+<button class="border border-[#3B82F6] text-[#3B82F6] px-6 py-3 rounded font-title-md text-title-md hover:bg-surface-container-low transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">play_circle</span> Watch the Pitch
+                    </button>
+</div>
+</div>
+<div class="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden glass-card">
+<img alt="Tech Dashboard" class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A sleek, high-tech digital dashboard displaying a map of Cameroon with glowing data points. The interface is clean and futuristic, utilizing a sophisticated palette of navy blues, pristine whites, and subtle glassmorphism effects. Glowing cyan and bright orange markers highlight active tracking locations. The overall mood is one of calm, engineered precision and advanced technological capability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcL5ke7En9dhVgglJZn4LX9ep1TqPVcdoTw-NSpuRzV3XUI6oRL55-2MOzVRzPU7sjyG51eW5EC_THfDCRBGEpkHX70ufbE4-GhOOIRWpgcUE85zjcmqnj3WvhgHsXwZ--qzJnq_AflJXYJsyu-Y3JP__t7anrl0cmtTgP4P9t22YpCmOs4-hRISXPVfA3EdeY0f9R_SFyJAD_nBDpcj2Zf2DGla5YvP4isO7HYUMHDe-o05lLSKxRfIyh7ujxauKfLeKIfC4pQ6A">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- 3-Column Features Grid -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="features">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-center text-primary mb-12">Engineered for Critical Response</h2>
+<div class="grid md:grid-cols-3 gap-gutter">
+<!-- Feature 1 -->
+<div class="glass-card p-6 rounded-xl hover:shadow-lg transition-all duration-300 group">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-weight="fill">hub</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-background mb-3">Hybrid Identification</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        A robust triad of protection. We integrate secure QR codes, cutting-edge Facial Recognition, and precision GPS Tracking to ensure a fail-safe identification net.
+                    </p>
+</div>
+<!-- Feature 2 -->
+<div class="glass-card p-6 rounded-xl hover:shadow-lg transition-all duration-300 group">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-weight="fill">my_location</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-background mb-3">Real-time Geofencing</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Advanced 3-trigger alert logic. Instant notifications are triggered by Geofence breaches, Separation anxiety detection, or abnormal No-Motion periods.
+                    </p>
+</div>
+<!-- Feature 3 -->
+<div class="glass-card p-6 rounded-xl hover:shadow-lg transition-all duration-300 group">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-weight="fill">shield_person</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-background mb-3">Safe-Contact Protocol</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Privacy is paramount. We protect families from exploitation by routing finders directly to verified partners and our dedicated, free MTN helpline.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop bg-surface" id="how-it-works">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-center text-primary mb-16">The 3 Layers of Safety</h2>
+<div class="space-y-12">
+<!-- Step 1 -->
+<div class="flex flex-col md:flex-row items-center gap-gutter">
+<div class="md:w-1/2 order-2 md:order-1">
+<div class="h-64 rounded-xl glass-card overflow-hidden relative">
+<img alt="QR Code Generation" class="w-full h-full object-cover" data-alt="A close-up view of a sleek mobile app interface generating a secure QR code. The screen displays minimal, elegant typography and crisp geometric patterns in deep navy blue and bright white. The lighting is soft and modern, casting a gentle glow on the phone screen, emphasizing the sophisticated, tech-forward nature of the application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEftmoOCA5d99eDWVqiiiK6IQWZSeBddnW7KLZS_OlRuIJn0siH4QoiIwiPhmBGzYCJ-vmtoITGmzWq2rsIuf4o9uqO_Da_REgZQ-0g0pH950u1ypprjMGexwVfpuxwd-ek0gOKhGFWFpIzVyPDLVzMHHQ0JIvwS8U-jlOHVJWRNa800w7fiEAZ299DHeHJkL9lB7O-yRsEHZ_SF4pDIK4ph-CClcdih7De7VLOLYIzNTY5pDKfcDYTP8lm4NT40yQYQFQgDtH27s">
+</div>
+</div>
+<div class="md:w-1/2 order-1 md:order-2 pl-0 md:pl-12">
+<div class="flex items-center gap-4 mb-4">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-caps text-label-caps">01</span>
+<h3 class="font-title-md text-title-md text-primary">Register &amp; Generate</h3>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                            Create a secure profile for your loved ones. Instantly generate unique, privacy-first QR codes that can be easily attached to belongings, clothing, or bags.
+                        </p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col md:flex-row items-center gap-gutter">
+<div class="md:w-1/2 pr-0 md:pr-12">
+<div class="flex items-center gap-4 mb-4">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-caps text-label-caps">02</span>
+<h3 class="font-title-md text-title-md text-primary">Active Monitoring</h3>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                            Equip them with the Geolocation Wristband. Our hardware provides continuous, active monitoring with precision GPS tracking, feeding data directly to your dashboard.
+                        </p>
+</div>
+<div class="md:w-1/2">
+<div class="h-64 rounded-xl glass-card overflow-hidden relative">
+<img alt="Smart Wristband" class="w-full h-full object-cover" data-alt="A macro shot of a sleek, modern smart wristband resting on a clean, light-colored surface. The wristband features a minimalist matte black finish with a subtle glowing blue indicator light. The environment is lit with cool, clinical studio lighting, highlighting the device's premium build quality and high-tech aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9-6EbIOpS7-WKSgeia-t2QbKgZCk-csTcRcFpswP-3SBy4MiDrfPNUFlbhPziSxGGGKEtMxw_h9GStbK_1J_k0EHp-44_WxSoKByebYxR4kBVNhL7v6aV1pkQEZGIiCL7Ml8YAsOq9t1xKWJPTgyqO7GiaLHUN4piIsi_oWbokwFmQds9rpNYy1fvMzsyE-BUtJlBaFXl7sCBUzdLiDinNNAEYzozA9s4sm59JwyhxYevbIeZg40j0PdPL59PqeANSxs9Pi6UTfg">
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col md:flex-row items-center gap-gutter">
+<div class="md:w-1/2 order-2 md:order-1">
+<div class="h-64 rounded-xl glass-card overflow-hidden relative">
+<img alt="AI Facial Matching" class="w-full h-full object-cover" data-alt="An abstract representation of AI facial recognition technology. A translucent digital face mesh is overlaid with glowing connection points and scanning lines in neon blue. The background is a deep, dark navy to make the tech elements pop. The image conveys rapid, accurate data processing and advanced artificial intelligence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7_V5n_uKgGDDJ8gclTOrmmDArBcpN7RZAINpqQEdoT6mEQNIUkm4cs-4HJlcQMPuCAX6Tk35Ti9Y6U82yKgX5aZwlv7fA-krK3eUM7TgZUB-xsKrFum5FQtTyakC3shDG0qEj0ahTWggNogKy6ibWjJPIVaVf_SDgGt2tlP5pgtJpO0UbSTKg7pBh5RyVV-Nk_tSihAG35Ych7d7aTIrIJOYlCUiYDIfwgj_Is_ghyNUvay_RHMXSzpcGxTg9MuLsWYKCqeIPOwA">
+</div>
+</div>
+<div class="md:w-1/2 order-1 md:order-2 pl-0 md:pl-12">
+<div class="flex items-center gap-4 mb-4">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-caps text-label-caps">03</span>
+<h3 class="font-title-md text-title-md text-primary">AI Facial Matching</h3>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                            In an emergency, our powerful AI automatically scans integrated public feeds and verified partner uploads, significantly accelerating the matching and recovery process.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- QR Safe-Contact Showcase -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop bg-surface-container-highest">
+<div class="max-w-container-max mx-auto text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Privacy First. Safety Always.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                Scanning a CAMSECURE QR code reveals only what is strictly necessary. We protect identities by displaying limited information and routing all contact through official channels.
+            </p>
+<div class="inline-block glass-card p-8 rounded-xl max-w-md w-full mx-auto text-left relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-2 bg-[#F97316]"></div>
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-4 mb-4">
+<span class="font-label-caps text-label-caps text-outline">SCAN RESULT #8472-A</span>
+<span class="material-symbols-outlined text-[#F97316]">verified_user</span>
+</div>
+<div class="mb-6">
+<p class="font-body-sm text-body-sm text-outline mb-1">Identified As</p>
+<p class="font-title-md text-title-md text-on-background">John (First Name Only)</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded border border-outline-variant/20 mb-6">
+<p class="font-data-mono text-data-mono text-primary text-center mb-2">URGENT INSTRUCTION</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center">Please keep the individual safe and immediately contact our official support line.</p>
+</div>
+<button class="w-full bg-[#F97316] text-on-primary font-title-md text-title-md py-3 rounded urgent-pulse hover:bg-opacity-90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">call</span> Call Free MTN Line: 1515
+                </button>
+</div>
+</div>
+</section>
+<!-- Pricing Table -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop bg-surface" id="pricing">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-center text-primary mb-12">Accessible Protection for All</h2>
+<div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+<!-- Free Tier -->
+<div class="glass-card rounded-xl p-8 border-t-4 border-t-outline">
+<h3 class="font-title-md text-title-md text-on-background mb-2">Community Basic</h3>
+<div class="font-display-lg text-display-lg text-primary mb-6">Free</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span> Basic Registration
+                        </li>
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span> Public Feed Browsing
+                        </li>
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span> QR Scanning Access
+                        </li>
+</ul>
+<button class="w-full border border-primary text-primary font-body-lg text-body-lg py-2 rounded hover:bg-surface-container-low transition-colors">Get Started</button>
+</div>
+<!-- Premium Tier -->
+<div class="glass-card rounded-xl p-8 border-t-4 border-t-[#3B82F6] transform md:-translate-y-4 shadow-xl">
+<div class="absolute top-0 right-0 bg-[#3B82F6] text-on-primary font-label-caps text-[10px] px-2 py-1 rounded-bl">RECOMMENDED</div>
+<h3 class="font-title-md text-title-md text-on-background mb-2">Premium Shield</h3>
+<div class="font-display-lg text-display-lg text-[#3B82F6] mb-6">$5<span class="font-body-sm text-body-sm text-on-surface-variant">/mo</span></div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[#3B82F6] text-sm">check_circle</span> Priority Alerts
+                        </li>
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[#3B82F6] text-sm">check_circle</span> Geofence Monitoring
+                        </li>
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[#3B82F6] text-sm">check_circle</span> SMS Broadcasts
+                        </li>
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[#3B82F6] text-sm">check_circle</span> Advanced AI Matches
+                        </li>
+</ul>
+<button class="w-full bg-[#1E3A8A] text-on-primary font-body-lg text-body-lg py-2 rounded hover:bg-primary transition-colors">Upgrade to Premium</button>
+</div>
+<!-- Hardware -->
+<div class="glass-card rounded-xl p-8 border-t-4 border-t-outline">
+<h3 class="font-title-md text-title-md text-on-background mb-2">Smart Hardware</h3>
+<div class="font-display-lg text-display-lg text-primary mb-6">$50<span class="font-body-sm text-body-sm text-on-surface-variant">/one-time</span></div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span> Active GPS Tracking
+                        </li>
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span> Geolocation Wristband
+                        </li>
+<li class="flex items-center gap-3 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span> Long Battery Life
+                        </li>
+</ul>
+<button class="w-full border border-primary text-primary font-body-lg text-body-lg py-2 rounded hover:bg-surface-container-low transition-colors">Order Hardware</button>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-20 px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="faq">
+<div class="max-w-container-max mx-auto max-w-3xl">
+<h2 class="font-headline-lg text-headline-lg text-center text-primary mb-12">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<div class="glass-card p-6 rounded-lg">
+<h4 class="font-title-md text-title-md text-on-background mb-2">How does the QR code protect my privacy?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Our QR codes act as a secure bridge. Scanning them does not reveal sensitive personal details or contact information. It only provides essential first-name identification and explicit instructions to contact our official, secure support line, ensuring your family's data remains private.</p>
+</div>
+<div class="glass-card p-6 rounded-lg">
+<h4 class="font-title-md text-title-md text-on-background mb-2">Who can see my child's GPS location?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">GPS data is strictly guarded. It is visible ONLY to registered parents/guardians and authorized CAMSECURE administrators during an active alert. We employ enterprise-grade encryption to ensure location data cannot be accessed by unauthorized parties.</p>
+</div>
+<div class="glass-card p-6 rounded-lg">
+<h4 class="font-title-md text-title-md text-on-background mb-2">Is the MTN helpline really free?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Yes. Through our strategic partnership with MTN, dialing 1515 to report a missing person or respond to a QR code scan is completely toll-free across Cameroon. We believe communication during emergencies should never be hindered by cost.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant w-full py-12">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Brand Column -->
+<div class="col-span-1 md:col-span-1 flex flex-col items-start">
+<div class="text-title-md font-title-md font-bold text-primary dark:text-primary-fixed mb-4">CAMSECURE</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 CAMSECURE. All rights reserved. MTN Emergency Line: 1515</p>
+</div>
+<!-- Links Column -->
+<div class="col-span-1 md:col-span-2 flex flex-wrap gap-8 justify-start md:justify-center font-body-sm text-body-sm">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Safety Tips</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact Support</a>
+</div>
+<!-- Emergency Banner -->
+<div class="col-span-1 md:col-span-1 flex justify-start md:justify-end">
+<div class="bg-[#F97316] text-on-primary px-4 py-3 rounded-lg flex items-center gap-3 w-full md:w-auto shadow-md">
+<span class="material-symbols-outlined text-2xl">emergency</span>
+<div>
+<div class="font-label-caps text-[10px] opacity-80">EMERGENCY LINE</div>
+<div class="font-title-md text-title-md font-bold">MTN 1515</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

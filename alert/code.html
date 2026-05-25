@@ -1,0 +1,201 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CAMSECURE - Critical Alert</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from instructions -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#b6c4ff",
+                        "tertiary": "#4b1c00",
+                        "on-primary-fixed": "#00164e",
+                        "on-surface": "#191c1e",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "on-secondary-fixed-variant": "#004395",
+                        "surface-tint": "#4059aa",
+                        "secondary-container": "#2170e4",
+                        "on-tertiary-fixed": "#341100",
+                        "background": "#f7f9fb",
+                        "on-secondary-fixed": "#001a42",
+                        "on-primary-container": "#90a8ff",
+                        "primary-fixed": "#dce1ff",
+                        "on-tertiary-container": "#f39461",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed-variant": "#264191",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "primary": "#00236f",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#6e2c00",
+                        "primary-container": "#1e3a8a",
+                        "on-tertiary-fixed-variant": "#773205",
+                        "on-surface-variant": "#444651",
+                        "inverse-surface": "#2d3133",
+                        "on-background": "#191c1e",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "on-secondary-container": "#fefcff",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-fixed": "#ffdbcb",
+                        "surface-container": "#eceef0",
+                        "surface-container-high": "#e6e8ea",
+                        "surface": "#f7f9fb",
+                        "outline": "#757682",
+                        "secondary-fixed": "#d8e2ff",
+                        "secondary": "#0058be",
+                        "surface-container-highest": "#e0e3e5",
+                        "outline-variant": "#c5c5d3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Inter"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "data-mono": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "title-md": ["18px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(186, 26, 26, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(186, 26, 26, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(186, 26, 26, 0); }
+        }
+        .animate-critical-pulse {
+            animation: pulse-border 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-lg text-body-lg text-on-surface antialiased overflow-hidden">
+<!-- Fullscreen Overlay Scrim -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/80 backdrop-blur-md p-margin-mobile md:p-margin-desktop">
+<!-- Alert Modal Container -->
+<main class="w-full max-w-[900px] bg-surface rounded-xl shadow-[0_4px_20px_rgba(30,58,138,0.15)] overflow-hidden flex flex-col ring-1 ring-error animate-critical-pulse">
+<!-- Critical Header -->
+<header class="bg-error text-on-error px-gutter py-4 flex items-center gap-unit">
+<span aria-hidden="true" class="material-symbols-outlined text-[32px] md:text-[40px]">warning</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg m-0 leading-tight">
+                    CRITICAL ALERT: Geofence Breach Detected
+                </h1>
+</header>
+<!-- Content Body -->
+<div class="p-gutter grid grid-cols-1 md:grid-cols-2 gap-gutter bg-surface">
+<!-- Left Column: Map Visual -->
+<div class="relative w-full h-[300px] md:h-full min-h-[300px] rounded-lg overflow-hidden border border-outline-variant/30 bg-surface-container-high">
+<img alt="Map showing breach" class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply" data-alt="A high-contrast, modern digital map interface displaying a suburban neighborhood from a top-down view. The map uses a sleek light-mode palette with subtle slate gray roads and muted green parks. A glowing neon red 'X' prominently marks a specific intersection, indicating a geofence breach. A faint, glowing red dotted line traces a path leading away from a zone outlined in a soft tech-blue border. The overall aesthetic is clean, urgent, and highly technical, fitting a professional security dashboard." data-location="School Zone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC00IP3XlMlvA83IVDxHeQNGPdPXtMW6qz6Fc1hW8I17BwZW7Lzq9d8LNwqwE4zsizrxBvQ8lwWPousGuSIulgmDCxKOZe4PLPzukZSE1ALQM7koXeOGUTJmFikgwlGHSyz5NXxmSmGmvsSLM0qxXGW1nu-JR1JmyZMrTOb_QnZ2xPvuqVkTq1eARvhK1LfFv40aEGk5wUIk-i9eAlIh5c8gtGleU07_e4bmW1yVIeEN1QH5Hp9LUvKlKpbdwYU3DHo8BtMM_zZsM4">
+<!-- Simulated UI Overlay on Map -->
+<div class="absolute inset-0 p-unit flex flex-col justify-between pointer-events-none">
+<div class="self-end bg-error text-on-error px-2 py-1 rounded-DEFAULT font-label-caps text-label-caps flex items-center gap-1 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-on-error animate-pulse"></span> LIVE
+                        </div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-error/20 flex items-center justify-center animate-ping absolute"></div>
+<span class="material-symbols-outlined text-error text-[40px] relative z-10 drop-shadow-md" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Details & Actions -->
+<div class="flex flex-col h-full justify-between gap-gutter">
+<!-- Target Info -->
+<section class="space-y-unit">
+<div class="flex items-center gap-unit text-primary">
+<span class="material-symbols-outlined">watch</span>
+<h2 class="font-title-md text-title-md m-0">Tommy Doe's Wristband</h2>
+</div>
+<div class="bg-error-container/30 border-l-4 border-error p-unit rounded-r-DEFAULT">
+<p class="font-body-sm text-body-sm text-on-surface m-0">
+<span class="font-bold">Logic Triggered:</span> Device exited "School Zone" for 5+ minutes
+                            </p>
+</div>
+</section>
+<!-- Telemetry Data -->
+<section class="grid grid-cols-2 gap-unit bg-surface-container-low p-unit rounded-lg border border-outline-variant/50">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Current Speed</span>
+<div class="font-data-mono text-data-mono text-on-surface flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[18px]">speed</span> 4 mph
+                            </div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Signal Strength</span>
+<div class="font-data-mono text-data-mono text-on-surface flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[18px] text-secondary">signal_cellular_4_bar</span> Strong
+                            </div>
+</div>
+</section>
+<!-- Actions -->
+<section class="flex flex-col gap-unit mt-auto pt-unit">
+<button class="w-full bg-error text-on-error hover:bg-error/90 active:bg-error/100 transition-colors py-3 px-4 rounded-lg font-title-md text-title-md flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined">local_police</span>
+                            Call Local Police
+                        </button>
+<button class="w-full bg-transparent border-2 border-primary-container text-primary-container hover:bg-primary-container/5 transition-colors py-3 px-4 rounded-lg font-title-md text-title-md flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">share_location</span>
+                            Share Live Tracking with Partner
+                        </button>
+<button class="w-full bg-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-variant/50 transition-colors py-2 px-4 rounded-lg font-body-sm text-body-sm mt-1">
+                            False Alarm (Dismiss)
+                        </button>
+</section>
+</div>
+</div>
+<!-- Footer / Privacy Reminder -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/30 p-unit text-center flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">lock</span>
+<p class="font-label-caps text-label-caps text-outline m-0">
+                    Exclusive visibility: Only you and CAMSECURE can see this alert.
+                </p>
+</footer>
+</main>
+</div>
+</body></html>
