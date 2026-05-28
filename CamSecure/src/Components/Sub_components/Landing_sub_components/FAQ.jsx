@@ -20,7 +20,7 @@ export default function FAQ() {
   return (
     <section className="py-20 md:py-24 bg-surface border-b border-outline-variant">
       <div className="max-w-3xl mx-auto px-4 md:px-8">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -30,7 +30,7 @@ export default function FAQ() {
           <h2 className="text-3xl font-semibold text-on-surface mb-2 tracking-tight">Frequently Asked Questions</h2>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

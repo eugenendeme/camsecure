@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Shield, Mail, Lock, LogIn } from 'lucide-react';
+import { Mail, Lock, LogIn } from 'lucide-react';
+import CamSecureLogo from '../Parts/CamSecureLogo.jsx';
 import authBg from '../../assets/auth-bg.png';
 
 export default function Authentication() {
@@ -49,9 +50,9 @@ export default function Authentication() {
                     {/* Header & Logo */}
                     <div className="flex flex-col items-center mb-10">
                         <div className="flex items-center gap-3 mb-2">
-                            <Shield className="w-10 h-10 text-blue-500 fill-blue-500" />
-                            <span className="text-3xl font-semibold text-blue-500 tracking-tight">
-                                CamSecure
+                            <CamSecureLogo size={40} className='mr-[-15px]' />
+                            <span className="text-2xl font-semibold text-black-500 tracking-tight">
+                                CAMSECURE
                             </span>
                         </div>
                         <p className="text-sm text-gray-600">Operational Command Sign-In</p>
@@ -87,9 +88,7 @@ export default function Authentication() {
                                 <label htmlFor="password" className="block text-sm font-semibold text-gray-900">
                                     Password
                                 </label>
-                                <a href="#" className="text-sm font-medium text-blue-500 hover:underline">
-                                    Recover Access
-                                </a>
+
                             </div>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -117,7 +116,7 @@ export default function Authentication() {
                                 className="w-4 h-4 text-blue-500 bg-white border-gray-400 rounded focus:ring-blue-500 focus:ring-2"
                             />
                             <label htmlFor="persist" className="ml-2 text-sm text-gray-700">
-                                Persist Session
+                                Remember me
                             </label>
                         </div>
 
@@ -133,9 +132,9 @@ export default function Authentication() {
 
                     {/* Footer Text */}
                     <div className="mt-10 text-sm text-center text-gray-600">
-                        Need system access?{' '}
+                        Don't Have an account yet?{' '}
                         <a href="#" className="font-semibold text-blue-500 hover:underline">
-                            Contact Administrator
+                            Create Account
                         </a>
                     </div>
 

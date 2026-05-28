@@ -25,7 +25,7 @@ export default function Hardware() {
   return (
     <section className="py-20 md:py-24 bg-surface-low border-b border-outline-variant">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -40,7 +40,7 @@ export default function Hardware() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {hardwareItems.map((item, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -49,10 +49,10 @@ export default function Hardware() {
               className="group bg-surface rounded-xl border border-outline-variant overflow-hidden hover:border-primary-fixed transition-colors hover:shadow-md flex flex-col"
             >
               <div className="overflow-hidden">
-                <img 
-                  alt={item.title} 
-                  className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500" 
-                  src={item.imgSrc} 
+                <img
+                  alt={item.title}
+                  className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                  src={item.imgSrc}
                 />
               </div>
               <div className="p-8 flex-grow flex flex-col">

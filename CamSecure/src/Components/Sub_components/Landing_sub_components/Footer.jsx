@@ -1,4 +1,5 @@
-import { Shield, Globe, HelpCircle } from 'lucide-react';
+import { Globe, HelpCircle } from 'lucide-react';
+import CamSecureLogo from '../../Parts/CamSecureLogo.jsx';
 
 export default function Footer() {
   return (
@@ -7,14 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <Shield className="text-on-surface w-6 h-6" fill="currentColor" />
-              <span className="font-semibold text-xl text-on-surface tracking-tight">CamSecure</span>
+              <CamSecureLogo size={26} className="mr-[-8px]" />
+              <span className="font-semibold text-xl text-on-surface tracking-tight">CAMSECURE</span>
             </div>
             <p className="text-sm text-on-surface-variant max-w-sm">
               Africa's first unified missing persons platform. Built for resilience. Designed for safety.
             </p>
           </div>
-          
+
           <div>
             <h4 className="font-semibold text-sm text-on-surface mb-4 tracking-wide">Platform</h4>
             <ul className="space-y-3 text-sm text-on-surface-variant">
@@ -24,7 +25,7 @@ export default function Footer() {
               <li><a href="#" className="hover:text-primary transition-colors">Pricing</a></li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-semibold text-sm text-on-surface mb-4 tracking-wide">Legal & Support</h4>
             <ul className="space-y-3 text-sm text-on-surface-variant">
@@ -35,7 +36,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-outline-variant pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <p className="text-[11px] font-medium text-on-surface-variant">
             © 2024 CamSecure. All rights reserved. Operations centered in Cameroon.

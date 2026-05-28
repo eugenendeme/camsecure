@@ -32,7 +32,7 @@ const supports = [
 
 export default function Support() {
   return (
-    <section className="py-20 md:py-24 bg-surface-lowest border-b border-outline-variant">
+    <section className="py-20 md:py-24 bg-transparent border-b border-outline-variant">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ export default function Support() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: item.delay }}
-              className="bg-surface rounded-xl border border-outline-variant p-8 flex flex-col"
+              className="bg-white/60 backdrop-blur-sm rounded-xl border border-outline-variant p-8 flex flex-col"
             >
               <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-6 border ${
                 item.isPriority 

@@ -26,7 +26,7 @@ export default function Features() {
   return (
     <section className="py-20 md:py-24 bg-surface-lowest border-b border-outline-variant">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -38,10 +38,10 @@ export default function Features() {
             Precision tools designed for high-stakes operational environments, ensuring clarity and speed when it matters most.
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((feature, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

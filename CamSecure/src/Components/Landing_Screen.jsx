@@ -11,7 +11,7 @@ import Footer from './Sub_components/Landing_sub_components/Footer.jsx';
 
 export default function LandingScreen() {
     return (
-        <div className="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed antialiased font-sans">
+        <div className="bg-transparent text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed antialiased font-sans">
             <Navbar />
             <main className="pt-[72px]">
                 <Hero />

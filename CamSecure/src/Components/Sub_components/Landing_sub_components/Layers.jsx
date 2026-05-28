@@ -32,7 +32,7 @@ export default function Layers() {
   return (
     <section className="py-20 md:py-24 bg-surface-lowest border-b border-outline-variant">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -44,7 +44,7 @@ export default function Layers() {
 
         <div className="space-y-16 md:space-y-32">
           {layers.map((layer, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -53,10 +53,10 @@ export default function Layers() {
               className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
             >
               <div className={`order-2 ${layer.reverse ? 'md:order-2' : 'md:order-1'} rounded-xl overflow-hidden border border-outline-variant shadow-sm ${layer.darkImg ? 'bg-black flex items-center justify-center' : ''}`}>
-                <img 
-                  alt={layer.title} 
-                  className={`w-full h-auto object-cover aspect-[16/9] ${layer.darkImg ? 'opacity-80 mix-blend-screen' : ''}`} 
-                  src={layer.imgSrc} 
+                <img
+                  alt={layer.title}
+                  className={`w-full h-auto object-cover aspect-[16/9] ${layer.darkImg ? 'opacity-80 mix-blend-screen' : ''}`}
+                  src={layer.imgSrc}
                 />
               </div>
               <div className={`order-1 ${layer.reverse ? 'md:order-1 md:pr-12' : 'md:order-2 md:pl-8'}`}>
