@@ -15,7 +15,7 @@ export default function Navbar() {
           <button onClick={() => navigate('/auth')} className="hidden md:block px-6 py-2 rounded-md border border-outline text-on-surface-variant text-sm font-semibold hover:bg-surface-low hover:text-on-surface transition-colors">
             Create Account
           </button>
-          <button className="px-6 py-2 rounded-md bg-primary text-white text-sm font-semibold hover:bg-primary-hover shadow-sm transition-colors flex items-center gap-2">
+          <button onClick={() => navigate('/app')} className="px-6 py-2 rounded-md bg-primary text-white text-sm font-semibold hover:bg-primary-hover shadow-sm transition-colors flex items-center gap-2">
             Go to App
             <ArrowRight className="w-4 h-4" />
           </button>
